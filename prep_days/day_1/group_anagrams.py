@@ -1,19 +1,24 @@
 """
 Group Anagrams — Day 1, Problem 2
 Target time: 10 min
-Actual time: ___
+Actual time: 15 min
 
 Clarifying questions (write 2–3 BEFORE coding):
-- ?
-- ?
+- Should I check for valid input (all strings?)
+- For repeated words, should we also include the repeats in the list?
 - ?
 """
 
 
 def group_anagrams(words: list[str]) -> list[list[str]]:
-    # your code here
-    ...
-
+    seen = {}
+    for word in words:
+        word_key = "".join(sorted(word))
+        if word_key in seen:
+            seen[word_key].append(word)
+        else:
+            seen[word_key] = [word]
+    return list(seen.values())
 
 if __name__ == "__main__":
     def _normalize(groups):
