@@ -36,10 +36,10 @@ Re-read this list before every mock. These are what separate "completes the prob
 Goal: be **fluent** with the building blocks. Every idiom below should be writable from a blank file in under 2 minutes by Day 7.
 
 ### Day 1 — Sun 2026-05-24 — Lists, dicts, sets, tuples
-- [ ] **Concept:** time complexity of common ops (list append O(1), insert O(n), `in` for list vs set, dict lookup O(1)).
-- [ ] **Idioms to memorize:** list comprehensions, `enumerate`, `zip`, dict-of-lists pattern, `dict.get(k, default)`, set operations (`&`, `|`, `-`).
-- [ ] **Problems:** Two Sum, Group Anagrams, Contains Duplicate, Valid Anagram.
-- [ ] **Self-test:** "Given a list of (user_id, item_id) events, return a dict of user_id → set of items." Write in <5 min, no lookups.
+- [x] **Concept:** time complexity of common ops (list append O(1), insert O(n), `in` for list vs set, dict lookup O(1)).
+- [x] **Idioms to memorize:** list comprehensions, `enumerate`, `zip`, dict-of-lists pattern, `dict.get(k, default)`, set operations (`&`, `|`, `-`).
+- [x] **Problems:** Two Sum, Group Anagrams, Contains Duplicate, Valid Anagram.
+- [x] **Self-test:** "Given a list of (user_id, item_id) events, return a dict of user_id → set of items." Write in <5 min, no lookups.
 
 ### Day 2 — Mon 2026-05-25 — `collections` module
 - [ ] **Concept:** `Counter`, `defaultdict(list/int/set)`, `deque` (O(1) append+popleft), `OrderedDict`.
@@ -226,7 +226,7 @@ Goal: practice combining primitives under time pressure. **This phase is where t
 
 Use the space below to jot per-day reflections (1–2 lines max). Patterns here are gold for Day 24.
 
-- Day 1:
+- Day 1 (done 2026-05-25, one day late): Two Sum was the rough spot — 16 min vs 5 min target because the hash-map pattern wasn't reflexive; drilled to 5× clean reps. Group Anagrams (15/10 min) surfaced the lists/sets-aren't-hashable rule. Contains Duplicate came in under budget (2/3 min) — pattern transfer working. Valid Anagram was the biggest *learning*: shipped `set(s) == set(t)`, which passed the file's asserts but is wrong (`"aab" vs "abb"` → True). Lesson banked: **invent your own counter-tests before declaring done.** `Counter`/`defaultdict` are explicitly Day 2 and were already wanted today.
 - Day 2:
 - Day 3:
 - ...
