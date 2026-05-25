@@ -3,7 +3,7 @@ Self-test — User → Items
 Day 1, Self-test
 Target time: 5 min  —  NO LOOKUPS, NO CONCEPT BRIEF, NO DOCS
 
-Actual time: ___
+Actual time: < 5 min
 """
 
 
