@@ -8,8 +8,16 @@ Actual time: ___
 
 
 def user_items(events: list[tuple[str, str]]) -> dict[str, set[str]]:
-    # your code here
-    ...
+    # create an empty dictionary
+    result = {}
+    # cycle through the list of tuples
+    for user, item in events:
+        if user not in result:
+            result[user] = set() # initialize set of items for new user
+        result[user].add(item)
+
+    return result
+
 
 
 if __name__ == "__main__":
