@@ -1,7 +1,7 @@
 """
 Contains Duplicate — Day 1, Problem 3
 Target time: 3 min
-Actual time: ___
+Actual time: 2 min
 
 Clarifying questions (write 2–3 BEFORE coding):
 - ?
@@ -11,8 +11,7 @@ Clarifying questions (write 2–3 BEFORE coding):
 
 
 def contains_duplicate(nums: list[int]) -> bool:
-    # your code here
-    ...
+    return (len(nums) != len(set(nums)))
 
 
 if __name__ == "__main__":
