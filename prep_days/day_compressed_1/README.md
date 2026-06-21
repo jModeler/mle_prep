@@ -1,40 +1,67 @@
 # Day Compressed 1 — Sun 2026-06-21
 
 **Interview:** Tue 2026-06-23 (coding round)
-**Mode:** mock-first, gap-driven drill, second mock.
+**Active mode:** concept reading → drills → Mock #2.
+
+## State
+
+Mock #1 (Day 18 prompt) was cut short after 15 min — three real gaps surfaced before the 60-min ran out:
+
+1. Filtering massive event data without scanning everything → **bisect over sorted timestamps**.
+2. Leveraging `Counter` reflexively for top-K.
+3. Collaborative filtering from scratch.
+
+(1) and (2) collapse into one technique. (3) is its own primer.
 
 ## Pass bar reminder (from the PDF rubric)
 
-Aim for **≥2 (Acceptable)** on every core component — not 4 on one and 0 on the rest.
-Rubric explicitly names: **working solution, binary search ideas where relevant, testing**.
+Aim for **≥2 (Acceptable)** on every core component — not 4 on one and 0 on the rest. Rubric explicitly names: **working solution, binary search ideas where relevant, testing.** Assumption-stating and trade-off narration are also graded.
 
-## Today's blocks
+## Today's drill sequence
 
-1. **Mock #1 (90 min):** open `MOCK_1_PROMPT.md` on the clock. 60 min strict + 30 min retro.
-2. Break.
-3. **Idiom drill (45 min):** populated from Mock #1 retro. Mandatory `bisect` drill included.
-4. **Blank-file primitives (90 min):** 2–3 implementations chosen post-mock, each ≤20 min.
-5. Break.
-6. **Mock #2 (90 min):** `MOCK_2_PROMPT.md`. Same protocol.
-7. **Retro + tomorrow's targets.**
+For each row: read the concept (if any), then attempt the drill from the blank function body. Tests are in each `.py` file — run as you build.
 
-## Rules (real-interview discipline)
+| # | Concept (read first) | Drill | Target | What it builds |
+|---|---|---|---:|---|
+| 1 | `concept_bisect.md` | `drill_bisect.py` | 5 min | binary search on sorted timestamps |
+| 2 | `concept_counter.md` | `drill_counter.py` | 10 min | top-K via bisect + Counter (the Mock #1 unlock) |
+| 3 | `concept_collaborative_filtering.md` | `drill_collaborative_filtering.py` | 25 min | user-user CF with Jaccard |
+| 4 | (your ML knowledge) | `drill_distance.py` | 15 min | dot / norm / euclidean / manhattan / cosine |
+| 5 | (your ML knowledge) | `drill_weighted_sampler.py` | 15 min | prefix-sum + bisect sampling (preview of Mock #2) |
+| 6 | (your ML knowledge) | `drill_knn.py` | 15 min | majority-vote classifier |
+| 7 | (your ML knowledge) | `drill_kmeans.py` | 20 min | from-scratch clustering |
 
-- **Do not read MOCK_1_PROMPT.md until the clock starts.** Same for Mock #2.
-- Phone stopwatch counts up. Countdown timer set to 60 min.
-- Allowed: stdlib (`collections`, `bisect`, `heapq`, `random`, `math`). Google for syntax. **No LLMs.**
-- **Think out loud.** Claude plays the interviewer — stays quiet unless asked a clarifying Q.
-- Solve files go in this folder: `mock_1_solution.py`, `mock_2_solution.py`.
-- First 3 min: write the 4-line assumption block. No code yet.
+**Total target:** ~105 min focused work + breaks. Push to evening if needed.
 
-## Scoring per mock (0–4 per component)
+## Mock #2 — after the drills
 
-| Component | Mock #1 | Mock #2 | Notes |
+When you've cleared the drills (or hit a stopping point you're happy with):
+
+- `MOCK_2_PROMPT.md` (sealed — don't peek until clock starts)
+- `mock_2_solution.py` (stub with assumption block)
+
+Same protocol: 60-min strict, think out loud, Claude as interviewer.
+
+## Rules
+
+- Allowed: stdlib only — `collections`, `bisect`, `heapq`, `random`, `math`. Google for syntax. **No LLMs.**
+- Don't peek at MOCK_2_PROMPT.md until the clock starts.
+- For each drill: read concept → pause 30 sec ("how would I approach this?") → attempt blank function → run tests.
+- If a drill blows past target by 2× and you're stuck, ask for a hint. Don't grind silently.
+
+## Self-score after each drill (0–4)
+
+| Drill | Time vs target | Score | Notes |
 |---|---|---|---|
-| Working pipeline end-to-end | | | |
-| Assumptions stated up front | | | |
-| `bisect` / binary search used where relevant | | | |
-| Tests-as-you-go (not just at end) | | | |
-| Modularity / naming | | | |
-| Trade-offs narrated out loud | | | |
-| Scale extension discussed | | | |
+| bisect | | | |
+| counter | | | |
+| collaborative_filtering | | | |
+| distance | | | |
+| weighted_sampler | | | |
+| knn | | | |
+| kmeans | | | |
+| Mock #2 | | | |
+
+## After-action
+
+Update `Memory/progress.md` at end of session with what landed cleanly vs. what needs another rep tomorrow.
