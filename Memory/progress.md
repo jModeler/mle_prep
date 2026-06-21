@@ -38,3 +38,24 @@ Per-day progress log. Update at end of each session.
 
 - Event-store theme (the most Tubi-flavored coding bucket per the prep PDF) lands explicitly on **Day 15**, with primitives built across Days 4 (`bisect`, marked ⭐), 5 (`heapq`), and 6 (deque sliding window). Today's hash-map work is the *outer* layer of an event store; Day 4 is the inflection point.
 - See [[project-tubi-interview]] for the static interview context (date, themes, breadth/depth round).
+
+---
+
+## 2026-06-21 — Pivot to compressed 2-day plan
+
+Coding round rescheduled to **Tue 2026-06-23**. The 25-day plan is no longer viable — only Day 1 was completed. Pivoted to a 2-day compressed plan that **skips DSA foundations** and goes mock-first.
+
+**Bet:** existing production Python is fluent; the gap is *speed of completing an end-to-end pipeline in 60 min*, which is the explicit failure mode in both the PDF rubric and PREP_PLAN.md. Drill that directly, not generic LeetCode.
+
+**Reorientation from the PDF (read 2026-06-21):**
+- Pass bar is **Acceptable (2/4)** on every component, not Excellent on one. Push all components to 2+.
+- Binary search is explicitly named in the rubric — `bisect` is non-negotiable.
+- Testing is a graded component, not hygiene. Test-as-you-go counts.
+- Assumption-stating is graded. The 4-line comment block at the top of every file = free points.
+- 3 of 5 "Tips for Success" are about communication. Silent coding tanks the score.
+
+**Scaffolded today's session:** `prep_days/day_compressed_1/` — README, Mock #1 prompt (sealed), solution stub. Plan is mock-first to surface real gaps before drilling. Mock #1 = Day 18 prompt (event ingest + top-K + collaborative recs). Mock #2 = Day 20 prompt (weighted sampler + decay). Mock #3 (tomorrow) = Day 22 prompt (KMeans + online + retrain).
+
+**Status (as of writing):** scaffold done, Mock #1 not yet attempted — Saisandeep is deferring to a focused solo block.
+
+**Next-session bootstrap:** see `prep_days/day_compressed_1/RESUME_HERE.md`.
