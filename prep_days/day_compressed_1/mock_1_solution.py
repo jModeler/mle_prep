@@ -10,4 +10,13 @@ Clarifying Qs / Assumptions (fill in before coding — paused clock):
 -
 """
 
+from datetime import datetime
+
+
 # Your code below this line.
+def top_k_items_last_hour(k, now):
+    """
+    return the K most-viewed items in the hour preceding `now`
+    """
+
+    # collect items in the last hour across users.
